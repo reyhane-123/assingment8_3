@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body dir="rtl">
+        <table width="50%">
+            {% for item in list%}
+                {% if forloop.counter0|divisibleby:"3"%}
+                    <tr>
+                {%endif%}
+
+                        <td width="30%">
+                            <a href="{% url 'course' item.id %}">
+                            <div style="text-align:center; margin:10px 20px ; background-color:pink ;padding:10px;box-shadow:2px 4px 6px rgba(0,0,0,0.3)">
+                                <p>{{item.id}}</p>
+                                <p>{{item.name}}</p>
+                            </div>
+                            </a>
+                            
+                        </td>
+                {% if forloop.counter0|divisibleby:"3"%}
+                    </tr>
+                {%endif%}
+
+            {%endfor%}
+        </table>
+    </body>
+</html>
